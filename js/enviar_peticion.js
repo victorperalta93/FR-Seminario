@@ -9,6 +9,6 @@ btnBuscar.onclick = function() {
 	console.log("enviando " + consulta + "...");
 	request.send(JSON.stringify({"consulta": consulta}));
 	request.onload = function(){
-		document.write(request.response);
+        document.getElementById('datos').innerHTML = request.response;
 	}
 }

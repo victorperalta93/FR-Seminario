@@ -22,7 +22,7 @@ else{
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
     switch($array_uri[1]){
         case 'principal':
-            renderizarPrincipal(false);
+            renderizarPrincipal();
             break;
         case "favicon.ico":
             echo "imgs/favicon.png";
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 else if($_SERVER['REQUEST_METHOD'] == 'POST'){
     switch($array_uri[1]){
         case 'stock':
-            renderizarPrincipal(true);
+            renderizarTabla();
             break;
         case "favicon.ico":
             echo "imgs/favicon.png";
