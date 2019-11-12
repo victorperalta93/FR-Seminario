@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
             renderizarPrincipal(false);
             break;
         case 'stock':
-            renderizarPrincipal(false);
+            renderizarPrincipal(true);
             break;
         case "favicon.ico":
             echo "imgs/favicon.png";

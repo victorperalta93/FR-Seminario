@@ -7,10 +7,17 @@ function stock($stock){
 }
 
 function renderizarPrincipal($stock){
-    $entorno = Entorno::getInstancia();
-    $variables = [
-        "stock" => stock($stock)
-    ];
+    if($stock){
+        $datos = json_decode(file_get_contents('php://input'));
 
-    echo $entorno->renderizar("index.html",$variables);
+        $variables = [
+            "stock" => stock($datos->consulta)
+        ];
+    }
+    else{
+        $variables = [];
+    }
+
+    $entorno = Entorno::getInstancia();
+    echo $entorno->renderizar("index.html.twig",$variables);
 }
