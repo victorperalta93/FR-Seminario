@@ -9,7 +9,6 @@ function stock($stock){
 function renderizarPrincipal($stock){
     if($stock){
         $datos = json_decode(file_get_contents('php://input'));
-
         $variables = [
             "stock" => stock($datos->consulta)
         ];

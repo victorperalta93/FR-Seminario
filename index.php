@@ -24,6 +24,16 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         case 'principal':
             renderizarPrincipal(false);
             break;
+        case "favicon.ico":
+            echo "imgs/favicon.png";
+            break;
+        default:
+            http_response_code(404);
+            break;
+    }
+}
+else if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    switch($array_uri[1]){
         case 'stock':
             renderizarPrincipal(true);
             break;
