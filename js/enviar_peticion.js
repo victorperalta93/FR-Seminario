@@ -1,12 +1,12 @@
 const btnBuscar = document.getElementById("btnBuscar");
 
 btnBuscar.onclick = function() {
-	let titulo = document.getElementById("tituloE").value;
+	let consulta = document.getElementById("consulta").value;
 
 	let request = new XMLHttpRequest();
-	request.open('POST',"eventos");
+	request.open('GET',"stock");
 	request.setRequestHeader("Content-Type","application/json;charset=UTF-8");
-	request.send(JSON.stringify({"titulo": titulo}));
+	request.send(JSON.stringify({"consulta": consulta}));
 
 	request.onload = function(){
 		window.location.href = "panel-control";

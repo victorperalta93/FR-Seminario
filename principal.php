@@ -1,29 +1,16 @@
 <?php 
-require_once 'modelo/polaroids.php';
-require_once 'modelo/usuarios.php';
-require_once 'utils.php';
+require_once 'modelo/stock.php';
 require_once 'entorno.php';
 
-function polaroids($etiqueta){
-    return pedirPolaroids($etiqueta);
+function stock($stock){
+    return pedirStock($stock);
 }
 
-
-function renderizarPrincipal(){
+function renderizarPrincipal($stock){
     $entorno = Entorno::getInstancia();
     $variables = [
-        "polaroids" => polaroids("all"),
-        "usuario"   => comprobarUsuario()
+        "stock" => stock($stock)
     ];
 
-    echo $entorno->renderizar("principal.html",$variables);
-}
-
-function aplicarFiltro($etiqueta){
-    $entorno = Entorno::getInstancia();
-    $variables = [
-        "polaroids" => polaroids($etiqueta)
-    ];
-
-    echo $entorno->renderizarBloque("principal.html","content",$variables);
+    echo $entorno->renderizar("index.html",$variables);
 }

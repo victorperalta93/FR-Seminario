@@ -1,5 +1,9 @@
 <?php 
-require_once 'modelo/eventos.php';
+require_once 'principal.php';
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Recibe la URI de htaccess en formato "limpio"
 $uri = $_SERVER['REQUEST_URI'];
@@ -17,8 +21,11 @@ else{
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
     switch($array_uri[1]){
-        case 'panel-control':
-            renderizarPanelControl();
+        case 'principal':
+            renderizarPrincipal(false);
+            break;
+        case 'stock':
+            renderizarPrincipal(false);
             break;
         case "favicon.ico":
             echo "imgs/favicon.png";
