@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -37,8 +37,7 @@
 				{% if stock is defined %}
 					{% for item in stock %}
 						<tr>
-							<th scope="row">1</th>
-							<td>{{item.id}}</td>
+							<th scope="row">{{item.id}}</th>
 							<td>{{item.item}}</td>
 							<td>{{item.cantidad}}</td>
 						</tr>

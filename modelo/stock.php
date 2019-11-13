@@ -11,7 +11,8 @@ function pedirStock($nombre){
     $db = Database::getInstancia();
     $mysqli = $db->getConexion();
 
-    $peticion = $mysqli->query("SELECT * FROM stock WHERE item LIKE '%$nombre%'");
+    $peticion = $mysqli->query("SELECT * FROM stock WHERE item LIKE '%{$nombre}%'");
+    //$peticion = $mysqli->query("SELECT * FROM stock WHERE item LIKE '%';-- %'");
 
     $stock = array();
     $i=0;
