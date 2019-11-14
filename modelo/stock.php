@@ -6,13 +6,12 @@ error_reporting(E_ALL);
 
 require_once "database.php";
 
-// devuelve los polaroids de la base de datos en formato JSON
+// devuelve los productos disponibles en stock que coincidan con la busqueda
 function pedirStock($nombre){
     $db = Database::getInstancia();
     $mysqli = $db->getConexion();
 
     $peticion = $mysqli->query("SELECT * FROM stock WHERE item LIKE '%{$nombre}%'");
-    //$peticion = $mysqli->query("SELECT * FROM stock WHERE item LIKE '%';-- %'");
 
     $stock = array();
     $i=0;
